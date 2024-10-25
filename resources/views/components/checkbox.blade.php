@@ -19,7 +19,7 @@
         for="{{ $name }}"
         data-ripple-dark="true"
     >
-        <input {{ $attributes($defaults) }}/>
+        <input checked {{ $attributes($defaults) }}/>
         <span
             class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
       <svg
