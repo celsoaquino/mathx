@@ -4,6 +4,6 @@ use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MainController::class, 'index'])->name('home');
-Route::post('/generate', [MainController::class, 'generateExercises'])->name('generateExercises');
-Route::get('/print', [MainController::class, 'printExercises'])->name('printExercises');
-Route::get('/export', [MainController::class, 'exportExercises'])->name('exportExercises');
+Route::post('/generate', [MainController::class, 'generateExercises'])->name('generate');
+Route::get('/print', [MainController::class, 'printExercises'])->name('print');
+Route::get('/export', [MainController::class, 'exportExercises'])->name('export');
