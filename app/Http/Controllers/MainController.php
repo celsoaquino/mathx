@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class MainController extends Controller
 {
@@ -11,7 +12,7 @@ class MainController extends Controller
         return view('home');
     }
 
-    public function generateExercises(Request $request)
+    public function generateExercises(Request $request): View
     {
         $request->validate([
             'sum' => 'required_without_all:subtraction,multiplication,division',
@@ -70,12 +71,12 @@ class MainController extends Controller
 
             $exercises[] = [
                 'operation' => $operation,
-                'exercise_number' => 'index',
+                'exercise_number' => $i + 1,
                 'exercise' => $exercise,
                 'solution' => "$exercise $solution",
             ];
         }
-        dd($exercises);
+        return view('operations', compact('exercises'));
     }
 
     public function printExercises()
